@@ -28,10 +28,10 @@ const FormComponent = () => {
         <br />
             <Form className={`${styles.formStyle}`}>
                 <Form.Row>
-                    <Col>
+                    <Col xs="6">
                     <Form.Control onChange={e => setSearch(e.target.value)} placeholder="Search Value" />
                     </Col>
-                    <Col>
+                    <Col xs="3">
                     <Button
                         variant="light"
                         onClick={() => api(`http://localhost:3000/names/search/${searchTerm}`)}
@@ -42,6 +42,7 @@ const FormComponent = () => {
                 </Form.Row>
             </Form>
             <br />
+            <h2>Roman Names</h2>
              {apiData !== '' && 
              <ol type="I">
                 {apiData.map((item,i) => <li key={i}>{item}</li>)}
